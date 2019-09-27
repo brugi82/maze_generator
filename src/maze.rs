@@ -68,7 +68,6 @@ pub mod maze {
             }
 
             cells[0][0].visited = true;
-            cells[0][0].up = BorderType::Passage;
 
             let mut moves: Vec<(u32, u32)> = vec![];
             moves.push((0,0));
@@ -179,7 +178,7 @@ pub mod maze {
             }
         }
 
-        fn get_cell(&self, row_index: u32, col_index: u32) -> &Cell {
+        pub fn get_cell(&self, row_index: u32, col_index: u32) -> &Cell {
             &self.cells[row_index as usize][col_index as usize]
         }
 
